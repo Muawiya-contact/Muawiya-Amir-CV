@@ -73,7 +73,7 @@ section h2 {
 }
 
 /* Lists */
-.skills ul, .projects ul, .interests ul {
+ul {
     list-style: none;
     padding: 0;
 }
