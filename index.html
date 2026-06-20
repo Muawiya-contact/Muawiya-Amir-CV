@@ -1,137 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muawiya Amir — Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muawiya Amir — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --side:#1b2a3a;
+    --side-soft:#24384c;
+    --side-text:#c4cfda;
+    --side-head:#6ea8d8;
+    --pill-border:#3c5169;
+    --ink:#1c2733;
+    --muted:#5a6672;
+    --accent:#2f6db0;
+    --rule:#d8dee5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{background:#eef0f3;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);line-height:1.4;font-size:10.2px;-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  .page{
+    width:8.5in;min-height:11in;margin:24px auto;background:#fff;
+    box-shadow:0 2px 18px rgba(0,0,0,.12);display:flex;overflow:hidden;
+  }
+  .icon{width:12px;height:12px;flex:none;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+
+  /* ---------- SIDEBAR ---------- */
+  .side{
+    width:2.85in;flex:none;background:var(--side);color:var(--side-text);
+    padding:26px 20px;
+  }
+  .name{font-family:'Editorial New','PP Editorial New','Fraunces',Georgia,serif;font-size:27px;font-weight:600;color:#fff;line-height:1.0;letter-spacing:-.2px;}
+  .tagline{font-size:9.6px;color:#9fb2c4;margin-top:6px;line-height:1.45;}
+  .side h3{
+    font-size:9.4px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;
+    color:var(--side-head);margin:18px 0 8px;
+  }
+  .side-divider{height:1px;background:#2f435a;margin:16px 0 0;}
+
+  .contact-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:9.6px;color:var(--side-text);}
+  .contact-row .icon{color:var(--side-head);}
+
+  .skill-group{margin-bottom:9px;}
+  .skill-group .label{font-size:9px;color:#8aa0b6;margin-bottom:4px;}
+  .pills{display:flex;flex-wrap:wrap;gap:4px;}
+  .pill{
+    border:1px solid var(--pill-border);border-radius:3px;padding:2px 6px;
+    font-size:8.7px;color:#d3dde6;background:var(--side-soft);
+  }
+
+  .side ul{list-style:none;}
+  .side li{font-size:9.4px;margin-bottom:5px;color:var(--side-text);line-height:1.4;}
+  .cert-li{padding-left:0;}
+  .int-li{position:relative;padding-left:11px;}
+  .int-li::before{content:"";position:absolute;left:0;top:6px;width:4px;height:4px;border-radius:50%;background:var(--side-head);}
+  .cp-text{font-size:9.4px;line-height:1.45;}
+  .cp-text b{color:#fff;}
+  .side-link{color:var(--side-head);}
+
+  /* ---------- MAIN ---------- */
+  .main{flex:1;padding:26px 28px;}
+  .main h2{
+    font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;
+    color:var(--accent);border-bottom:1px solid var(--rule);padding-bottom:3px;margin-bottom:8px;
+  }
+  section{margin-bottom:14px;}
+  section:last-child{margin-bottom:0;}
+  .summary{font-size:10.2px;color:#333b44;}
+
+  .entry{margin-bottom:9px;}
+  .entry:last-child{margin-bottom:0;}
+  .entry-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+  .entry-title{font-weight:700;font-size:10.6px;}
+  .entry-title .org{color:var(--accent);}
+  .entry-meta{font-size:9px;color:var(--muted);font-style:italic;white-space:nowrap;}
+  .main ul{list-style:none;margin-top:3px;}
+  .main li{position:relative;padding-left:11px;margin-bottom:2px;}
+  .main li::before{content:"";position:absolute;left:1px;top:6px;width:3px;height:3px;border-radius:50%;background:var(--accent);}
+
+  .edu-grid,.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+  .edu-item b{font-size:10.4px;}
+  .edu-item span{display:block;color:var(--muted);font-size:9.4px;}
+  .proj-item .pt{font-weight:700;color:var(--accent);font-size:10px;}
+  .proj-item p{font-size:9.4px;color:#444c55;margin-top:1px;}
+
+  @media print{
+    html,body{background:#fff;}
+    .page{margin:0;box-shadow:none;width:auto;min-height:auto;}
+    @page{size:Letter;margin:0;}
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <img src="pro.jpg" alt="Muawiya Amir" class="profile-img" />
-      <div>
-        <h1>Muawiya Amir</h1>
-        <p class="tagline">Dual-Degree Student | AI & Systems Enthusiast | Open Source Contributor</p>
-      </div>
-    </header>
+<div class="page">
 
-    <section class="contact-info">
-      <h2>Let's Connect</h2>
-      <div class="contact-grid">
-        <p><strong>Location:</strong> Abdul Hakim, Punjab, 58180 PB</p>
-        <p><strong>Phone:</strong> +92 329 7316882</p>
-        <p><strong>Email:</strong> <a href="mailto:contactmuawiya@gmail.com">contactmuawiya@gmail.com</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/contactmuawiya" target="_blank">linkedin.com/in/contactmuawiya</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/Muawiya-contact" target="_blank">github.com/Muawiya-contact</a></p>
-        <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@CodingMoves" target="_blank">Coding Moves</a></p>
-      </div>
-    </section>
+  <!-- ===================== SIDEBAR ===================== -->
+  <aside class="side">
+    <div class="name">Muawiya<br>Amir</div>
+    <div class="tagline">Software Engineer · AI &amp; Systems · Open-Source Contributor</div>
 
-    <section class="profile">
+    <div class="side-divider"></div>
+    <h3>Contact</h3>
+    <div class="contact-row">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span>Multan, Pakistan</span>
+    </div>
+    <div class="contact-row">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>+92 329 7316882</span>
+    </div>
+    <div class="contact-row">
+      <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          <a href="mailto:contactmuawiya@gmail.com" class="side-link">
+        contactmuawiya@gmail.com
+    </a>
+        </div>
+    <div class="contact-row">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <a href="https://linkedin.com/in/contactmuawiya" class="side-link" target="_blank" rel="noopener noreferrer">
+            linkedin.com/in/contactmuawiya
+        </a>
+    </div>
+    <div class="contact-row">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      <a href="https://github.com/Muawiya-contact" class="side-link" target="_blank">
+    github.com/Muawiya-contact
+</a>
+    </div>
+    <div class="contact-row">
+      <svg class="icon" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
+          <a href="https://leetcode.com/u/Moavia_Amir" class="side-link" target="_blank" rel="noopener noreferrer">
+        leetcode.com/u/Moavia_Amir
+    </a>
+    </div>
+
+    <div class="side-divider"></div>
+    <h3>Skills</h3>
+    <div class="skill-group">
+      <div class="label">Systems &amp; Low-Level</div>
+      <div class="pills"><span class="pill">C / C++</span><span class="pill">x86_64 Asm</span><span class="pill">OS Architecture</span></div>
+    </div>
+    <div class="skill-group">
+      <div class="label">AI &amp; Data Science</div>
+      <div class="pills"><span class="pill">Python</span><span class="pill">TensorFlow</span><span class="pill">PyTorch</span><span class="pill">Scikit-learn</span><span class="pill">Pandas</span></div>
+    </div>
+    <div class="skill-group">
+      <div class="label">Web &amp; Backend</div>
+      <div class="pills"><span class="pill">ReactJS</span><span class="pill">Flask</span><span class="pill">REST APIs</span></div>
+    </div>
+    <div class="skill-group">
+      <div class="label">Tools &amp; Databases</div>
+      <div class="pills"><span class="pill">Git</span><span class="pill">SQL</span><span class="pill">Docker</span><span class="pill">CI/CD</span><span class="pill">VS Code</span></div>
+    </div>
+
+    <div class="side-divider"></div>
+    <h3>Certifications</h3>
+    <ul>
+      <li class="cert-li">Applied Machine Learning — Verified</li>
+      <li class="cert-li">Python AI Developer — Mimo</li>
+      <li class="cert-li">Google Cloud Specialization — NAVTTC (ongoing)</li>
+    </ul>
+
+    <div class="side-divider"></div>
+    <h3>Competitive Programming</h3>
+    <p class="cp-text"><b>400+ problems</b> solved on LeetCode, focused on DSA &amp; algorithm optimization.</p>
+
+    <div class="side-divider"></div>
+    <h3>Interests</h3>
+    <ul>
+      <li class="int-li">ML research paper (in progress)</li>
+      <li class="int-li">Open-source security &amp; infrastructure</li>
+      <li class="int-li">Math × AI intersection</li>
+    </ul>
+  </aside>
+
+  <!-- ===================== MAIN ===================== -->
+  <main class="main">
+    <section>
       <h2>Professional Summary</h2>
-      <p>
-        Dedicated developer with a strong curiosity for technology, currently pursuing dual degrees in <strong>Artificial Intelligence</strong> and <strong>Mathematics</strong>. My expertise ranges from building custom <strong>x86_64 operating system kernels</strong> to fine-tuning machine learning models. I thrive on tackling complex architectural challenges and actively share my knowledge through my YouTube channel, <strong>Coding Moves</strong>. I am currently focused on high-performance engineering and contributing to the global open-source ecosystem through GSoC and LFX.
-      </p>
-    </section>
-    
-    <section class="skills">
-      <h2>Technical Toolkit</h2>
-      <ul>
-        <li><strong>Systems & Low-Level:</strong> C, C++, x86_64 Assembly, Operating System Architecture</li>
-        <li><strong>AI & Data Science:</strong> Python (Advanced), TensorFlow, PyTorch, Scikit-learn, Pandas</li>
-        <li><strong>Web Development:</strong> ReactJS, RESTful APIs, Flask, Backend Architecture</li>
-        <li><strong>Tools & Databases:</strong> Git, SQL (Expertise), CI/CD, VS Code, Cursor IDE</li>
-      </ul>
+      <p class="summary">Artificial Intelligence and Mathematics student and active open-source contributor. Triage Collaborator on <b>drt-hub/drt</b>, a Python Reverse ETL engine shipped across 30+ PyPI releases, where I build connectors, configuration validation, and observability tooling and review community pull requests. Comfortable working from x86_64 OS kernels up to applied machine learning, and drawn to work that needs both systems depth and clean engineering.</p>
     </section>
 
-    <section class="experience">
-      <h2>Work History</h2>
-      <ul>
-        <li>
-          <div class="job-header">
-            <strong>Participating Contributor | Google Summer of Code (GSoC)</strong>
-            <span>Apr 2026 - Current</span>
-          </div>
-          <p>Focusing on performance monitoring and JSON Schema tools. Collaborating across departments to research and implement standardized data structures while maintaining individual project accountability.</p>
-        </li>
-        <li>
-          <div class="job-header">
-            <strong>Full Stack Developer (Part-Time) | SudoStudy</strong>
-            <span>Sep 2025 - Current</span>
-          </div>
-          <p>Developing functional databases and backend servers. Responsible for debugging complex issues and integrating third-party APIs to enhance user experience on education platforms.</p>
-        </li>
-        <li>
-          <div class="job-header">
-            <strong>Python Programmer Intern | Code Alpha</strong>
-            <span>Feb 2025 - Apr 2026</span>
-          </div>
-          <p>Automated data processing pipelines and built scalable backend systems using Flask. Focused on improving script efficiency and data automation tasks.</p>
-        </li>
-      </ul>
+    <section>
+      <h2>Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Open-Source Engineer &amp; Triage Collaborator · <span class="org">drt-hub/drt</span></div>
+          <div class="entry-meta">Apr 2026 – Present</div>
+        </div>
+        <ul>
+          <li>Promoted to Triage Collaborator after sustained, high-quality contributions; review pull requests, triage issues, and shape feature design with maintainers.</li>
+          <li>Designed and built the dynamic connector registry that auto-discovers sources and destinations, removing hardcoded dispatch maps across the engine.</li>
+          <li>Added the Jira connector (create/update), JSON Schema validation for config files, and data-quality tests (freshness, unique, accepted_values).</li>
+          <li>Shipped OpenTelemetry tracing and metrics with lazy, idempotent providers (+680 lines) and dry-run row-count diffs for safe sync previews.</li>
+          <li>Selected to contribute with this organization for <b>Google Summer of Code 2027.</b></li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Full-Stack Developer (Part-Time) · <span class="org">SudoStudy</span></div>
+          <div class="entry-meta">Sep 2025 – Present</div>
+        </div>
+        <ul>
+          <li>Build backend services and databases for an education platform and integrate third-party APIs.</li>
+          <li>Shipped student features including native mobile-camera capture for long-answer questions and quiz-attempt review for teachers.</li>
+          <li>Debugged cross-stack failures across quiz, subject, and group-management flows.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Python Developer Intern · <span class="org">CodeAlpha</span></div>
+          <div class="entry-meta">Feb 2025 – Apr 2026</div>
+        </div>
+        <ul>
+          <li>Automated data-processing pipelines and built scalable Flask backends; improved script efficiency and reliability.</li>
+        </ul>
+      </div>
     </section>
 
-    <section class="education">
+    <section>
       <h2>Education</h2>
-      <ul>
-        <li>
-          <strong>Bachelor of Science in Artificial Intelligence</strong><br>
-          NFC IET Multan — Multan, Punjab, Pakistan
-        </li>
-        <li>
-          <strong>Bachelor of Science in Mathematics</strong><br>
-          Virtual University of Pakistan
-        </li>
-      </ul>
+      <div class="edu-grid">
+        <div class="edu-item"><b>B.S. Artificial Intelligence</b><span>NFC Institute of Engineering &amp; Technology, Multan</span></div>
+        <div class="edu-item"><b>B.S. Mathematics</b><span>Virtual University of Pakistan</span></div>
+      </div>
     </section>
 
-    <section class="projects">
-      <h2>Top Projects</h2>
-      <ul>
-        <li>
-          <strong><a href="https://github.com/Muawiya-contact/Arion-OS" target="_blank">Arion OS</a></strong> – A learning-focused x86_64 operating system designed to explore kernel-level development, memory management, and system calls.
-        </li>
-        <li>
-          <strong><a href="https://github.com/Coding-Moves/BSAI-Projects" target="_blank">BSAI Archive (ResQTemp)</a></strong> – A central repository documenting my BS AI journey, including <strong>ResQTemp</strong>: an IoT/Assembly-based temperature monitoring and rescue alert system.
-        </li>
-        <li>
-          <strong><a href="https://github.com/Muawiya-contact/ViewOrbit" target="_blank">ViewOrbit</a></strong> – A multi-platform rewards system connecting digital creators with their audiences through an engagement-based economy.
-        </li>
-        <li>
-          <strong><a src="https://github.com/Coding-Moves/Linear-Algebra">Linear Algebra Library</a></strong> – A custom Python library built from scratch using pure logic and primitive types, avoiding built-in math classes to master algorithmic fundamentals.
-        </li>
-      </ul>
+    <section>
+      <h2>Key Projects</h2>
+      <div class="proj-grid">
+        <div class="proj-item"><div class="pt"><a href="https://github.com/Coding-Moves/Arion_OS">Arion OS</a></div><p>x86_64 operating system from scratch: kernel, memory management, and system calls.</p></div>
+        <div class="proj-item"><div class="pt"><a href="https://github.com/Coding-Moves/Linear-Algebra">Linear Algebra Library</a></div><p>Python numerical library built only from primitive types, implementing core routines by hand.</p></div>
+        <div class="proj-item">
+          <div class="pt"><a href = "https://github.com/Coding-Moves/BSAI-Projects">BSAI Projects</a></div>
+          <p>Collection of AI/ML projects from BS Artificial Intelligence coursework.</p></div>
+        <div class="proj-item"><div class="pt"><a href = "https://github.com/Coding-Moves/BSAI-Projects/tree/main/ResQTemp">ResQTemp</a></div><p>IoT temperature-monitoring and rescue-alert system built in Assembly.</p></div>
+      </div>
     </section>
 
-    <section class="certifications">
-      <h2>Honors & Verifications</h2>
+    <section>
+      <h2>Selected Open-Source Contributions</h2>
       <ul>
-        <li><strong>Applied Machine Learning Certification</strong> – Verified Graduate</li>
-        <li><strong>HP LIFE Ambassador</strong> – <a href="https://www.life-global.org/en/badges/b563ccf0-63f9-415f-8d4c-97185e412445" target="_blank">Official Badge</a></li>
-        <li><strong>Google Cloud Specialization</strong> – NAVTTC (Ongoing)</li>
-        <li><strong>Python AI Developer</strong> – Mimo Professional Track (<a href="MimioPythonAI.pdf" target="_blank">Certificate</a>)</li>
+        <li><b>apache/hugegraph-ai</b> — upgraded the Python client CI from 1.3.0 to 1.7.0 and migrated to GitHub service containers with health checks.</li>
+        <li><b>linuxfoundation/crowd.dev</b> — audited and corrected outdated technical docs, Node version, and repository URLs.</li>
+        <li>Additional merged work in <b>zulip/zulip</b> and <b>RocketChat/homeserver</b>.</li>
       </ul>
     </section>
+  </main>
 
-    <section class="leetcode">
-      <h2>Competitive Programming</h2>
-      <p>
-        I use LeetCode to sharpen my mathematical logic and algorithmic thinking. 
-        <strong>400+ problems solved</strong> with a focus on efficient Data Structures and algorithm optimization.
-      </p>
-      <p><strong>Profile:</strong> <a href="https://leetcode.com/u/Moavia_Amir/" target="_blank">Moavia Amir on LeetCode</a></p>
-    </section>
-
-    <section class="interests">
-      <h2>Outside the Code</h2>
-      <ul>
-        <li>Writing a Research Paper on Machine Learning</li>
-        <li>Contributing to the Linux Foundation and Open Source Security initiatives</li>
-        <li>Exploring the intersection of pure Mathematics and Artificial Intelligence</li>
-      </ul>
-    </section>
-  </div>
+</div>
 </body>
 </html>
+
+
+
